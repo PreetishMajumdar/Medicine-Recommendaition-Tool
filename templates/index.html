@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCore AI - Advanced Healthcare Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="medical-loader">
+            <div class="heartbeat">
+                <i class="fas fa-heartbeat"></i>
+            </div>
+            <div class="loader-text">Initializing MediCore AI...</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo-container">
+                    <div class="logo-pulse"></div>
+                    <i class="fas fa-user-md"></i>
+                </div>
+                <span class="brand-text">MediCore AI</span>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#symptom-checker" class="nav-link">Diagnosis</a>
+                <a href="#testimonials" class="nav-link">Reviews</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="particle" style="--delay: 0s"></div>
+            <div class="particle" style="--delay: 1s"></div>
+            <div class="particle" style="--delay: 2s"></div>
+            <div class="particle" style="--delay: 3s"></div>
+            <div class="particle" style="--delay: 4s"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="typing-text" data-text="Advanced AI Healthcare Diagnosis">Advanced AI Healthcare Diagnosis</span>
+                </h1>
+                <p class="hero-subtitle animate-fade-up">
+                    Experience the future of medical diagnosis with our AI-powered symptom checker. 
+                    Get instant, accurate health insights powered by advanced machine learning.
+                </p>
+                <div class="hero-buttons animate-fade-up">
+                    <button class="btn btn-primary" onclick="scrollToSection('symptom-checker')">
+                        <i class="fas fa-stethoscope"></i>
+                        Start Diagnosis
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('features')">
+                        <i class="fas fa-info-circle"></i>
+                        Learn More
+                    </button>
+                </div>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat-card animate-slide-up">
+                    <div class="stat-number" data-target="99.2">0</div>
+                    <div class="stat-label">Accuracy Rate</div>
+                </div>
+                <div class="stat-card animate-slide-up" style="--delay: 0.2s">
+                    <div class="stat-number" data-target="50000">0</div>
+                    <div class="stat-label">Patients Helped</div>
+                </div>
+                <div class="stat-card animate-slide-up" style="--delay: 0.4s">
+                    <div class="stat-number" data-target="24">0</div>
+                    <div class="stat-label">24/7 Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose MediCore AI?</h2>
+                <p class="section-subtitle">Advanced technology meets compassionate care</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card" data-tilt>
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI-Powered Diagnosis</h3>
+                    <p>Advanced machine learning algorithms analyze symptoms for accurate predictions</p>
+                    <div class="feature-hover"></div>
+                </div>
+                
+                <div class="feature-card" data-tilt>
+                    <div class="feature-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3>Voice Recognition</h3>
+                    <p>Speak your symptoms naturally with our speech-to-text technology</p>
+                    <div class="feature-hover"></div>
+                </div>
+                
+                <div class="feature-card" data-tilt>
+                    <div class="feature-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Personalized Care</h3>
+                    <p>Receive customized treatment recommendations based on your profile</p>
+                    <div class="feature-hover"></div>
+                </div>
+                
+                <div class="feature-card" data-tilt>
+                    <div class="feature-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock medical assistance and emergency guidance</p>
+                    <div class="feature-hover"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Symptom Checker Section -->
+    <section id="symptom-checker" class="symptom-checker">
+        <div class="container">
+            <div class="checker-container">
+                <div class="section-header">
+                    <h2 class="section-title">AI Symptom Checker</h2>
+                    <p class="section-subtitle">Describe your symptoms and get instant medical insights</p>
+                </div>
+                
+                <div class="checker-form-container">
+                    <form class="symptom-form" id="symptom-form">
+                        <div class="form-step active" data-step="1">
+                            <h3>Tell us about your symptoms</h3>
+                            <div class="form-group">
+                                <label for="symptoms" class="form-label">
+                                    <i class="fas fa-notes-medical"></i>
+                                    Describe your symptoms (comma-separated)
+                                </label>
+                                <div class="input-container">
+                                    <textarea 
+                                        class="form-control" 
+                                        id="symptoms" 
+                                        name="symptoms" 
+                                        placeholder="Type symptoms like: headache, fever, cough, fatigue, nausea, dizziness..."
+                                        rows="4"
+                                    ></textarea>
+                                    <div class="suggestions-container" id="suggestions"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="voice-section">
+                                <button type="button" class="btn btn-voice" id="voice-btn">
+                                    <div class="voice-animation">
+                                        <i class="fas fa-microphone"></i>
+                                    </div>
+                                    <span class="voice-text">Click to speak</span>
+                                </button>
+                                <div class="voice-status" id="voice-status"></div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                <i class="fas fa-search"></i>
+                                <span>Analyze Symptoms</span>
+                                <div class="btn-loading">
+                                    <div class="spinner"></div>
+                                </div>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="results hidden">
+        <div class="container">
+            <div class="results-header">
+                <h2 class="section-title">Our AI System Results</h2>
+                <div class="confidence-meter">
+                    <span>Confidence Level:</span>
+                    <div class="confidence-bar">
+                        <div class="confidence-fill" id="confidence-fill"></div>
+                    </div>
+                    <span class="confidence-value" id="confidence-value">95%</span>
+                </div>
+            </div>
+            
+            <div class="results-grid">
+                <div class="result-card primary-result">
+                    <div class="result-header">
+                        <i class="fas fa-diagnoses"></i>
+                        <h3>Predicted Condition</h3>
+                    </div>
+                    <div class="result-content">
+                        <div class="condition-name" id="condition-name">Common Cold</div>
+                        <div class="condition-severity" id="condition-severity">Mild</div>
+                    </div>
+                </div>
+                
+                <div class="result-actions">
+                    <button class="ml-action-btn disease-btn" onclick="openModal('disease-modal')">
+                        <i class="fas fa-disease"></i>
+                        <span>Disease</span>
+                    </button>
+                    <button class="ml-action-btn description-btn" onclick="openModal('description-modal')">
+                        <i class="fas fa-file-medical-alt"></i>
+                        <span>Description</span>
+                    </button>
+                    <button class="ml-action-btn precaution-btn" onclick="openModal('precaution-modal')">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Precaution</span>
+                    </button>
+                    <button class="ml-action-btn medication-btn" onclick="openModal('medication-modal')">
+                        <i class="fas fa-pills"></i>
+                        <span>Medications</span>
+                    </button>
+                    <button class="ml-action-btn workout-btn" onclick="openModal('workout-modal')">
+                        <i class="fas fa-dumbbell"></i>
+                        <span>Workouts</span>
+                    </button>
+                    <button class="ml-action-btn diet-btn" onclick="openModal('diet-modal')">
+                        <i class="fas fa-utensils"></i>
+                        <span>Diets</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Users Say</h2>
+                <p class="section-subtitle">Trusted by healthcare professionals and patients worldwide</p>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"This platform has revolutionized how we approach initial patient assessments. The accuracy is remarkable and it saves us valuable time during consultations."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Dr. Sarah Johnson</h4>
+                                <span>Chief of Medicine, Metro Hospital</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Quick, accurate, and easy to use. Helped me understand my symptoms better before visiting the doctor. The voice recognition feature is incredibly convenient."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Michael Chen</h4>
+                                <span>Software Engineer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"As a busy parent, having 24/7 access to reliable health guidance is invaluable. The personalized recommendations have been spot-on every time."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-female"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Emily Rodriguez</h4>
+                                <span>Working Mother</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slider-controls">
+                <button class="slider-btn prev" onclick="previousTestimonial()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="slider-dots">
+                    <span class="dot active" onclick="currentSlide(0)"></span>
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                </div>
+                <button class="slider-btn next" onclick="nextTestimonial()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>Need help or have questions? Our medical support team is here 24/7.</p>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Emergency Hotline</h4>
+                            <p>1-800-MEDICORE</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email Support</h4>
+                            <p>support@medicore.ai</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Availability</h4>
+                            <p>24/7 Medical Support</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ML Result Modals -->
+    <div class="modal hidden" id="disease-modal">
+        <div class="modal-overlay" onclick="closeModal('disease-modal')"></div>
+        <div class="modal-content">
+            <div class="modal-header ml-modal-header">
+                <h3><i class="fas fa-disease"></i> Predicted Disease</h3>
+                <button class="modal-close" onclick="closeModal('disease-modal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="disease-name-large" id="modal-disease-name">Common Cold</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal hidden" id="description-modal">
+        <div class="modal-overlay" onclick="closeModal('description-modal')"></div>
+        <div class="modal-content">
+            <div class="modal-header ml-modal-header">
+                <h3><i class="fas fa-file-medical-alt"></i> Description</h3>
+                <button class="modal-close" onclick="closeModal('description-modal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="description-content">A viral infection of the upper respiratory tract</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal hidden" id="precaution-modal">
+        <div class="modal-overlay" onclick="closeModal('precaution-modal')"></div>
+        <div class="modal-content">
+            <div class="modal-header ml-modal-header">
+                <h3><i class="fas fa-shield-alt"></i> Precaution</h3>
+                <button class="modal-close" onclick="closeModal('precaution-modal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul id="precaution-list">
+                    <li>Rest</li>
+                    <li>Stay hydrated</li>
+                    <li>Use tissues</li>
+                    <li>Wash hands frequently</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal hidden" id="medication-modal">
+        <div class="modal-overlay" onclick="closeModal('medication-modal')"></div>
+        <div class="modal-content">
+            <div class="modal-header ml-modal-header">
+                <h3><i class="fas fa-pills"></i> Medications</h3>
+                <button class="modal-close" onclick="closeModal('medication-modal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul id="medication-list">
+                    <li>Pain relievers</li>
+                    <li>Decongestants</li>
+                    <li>Throat lozenges</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal hidden" id="workout-modal">
+        <div class="modal-overlay" onclick="closeModal('workout-modal')"></div>
+        <div class="modal-content">
+            <div class="modal-header ml-modal-header">
+                <h3><i class="fas fa-dumbbell"></i> Workouts</h3>
+                <button class="modal-close" onclick="closeModal('workout-modal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul id="workout-list">
+                    <li>Light stretching</li>
+                    <li>Breathing exercises</li>
+                    <li>Gentle walking</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal hidden" id="diet-modal">
+        <div class="modal-overlay" onclick="closeModal('diet-modal')"></div>
+        <div class="modal-content">
+            <div class="modal-header ml-modal-header">
+                <h3><i class="fas fa-utensils"></i> Diets</h3>
+                <button class="modal-close" onclick="closeModal('diet-modal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul id="diet-list">
+                    <li>Warm liquids</li>
+                    <li>Chicken soup</li>
+                    <li>Citrus fruits</li>
+                    <li>Honey</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
